@@ -1,0 +1,46 @@
+
+
+.error{
+
+    color: red;
+}
+
+h1{
+ color:rgba(17, 242, 43, 0.837)
+}
+
+
+p{
+    
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(78, 176, 187, 0.9);
+  transition: 0.3s;
+  width: 40%;
+}
+
+button{
+
+    background-color: cyan;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: small;
+    border-color: cyan;
+
+}
+input{
+
+    border-color: rgba(23, 236, 236, 0.792);
+    
+
+
+
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 cyan;
+}
+
+.container {
+  padding: 2px 16px;
+}
