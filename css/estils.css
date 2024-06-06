@@ -9,9 +9,9 @@ h1{
  color:rgba(17, 242, 43, 0.837)
 }
 
+.txterror{
 
-p{
-    
+  border-color: rgba(226, 19, 19, 0.849);
 }
 
 
@@ -31,11 +31,12 @@ button{
 }
 input{
 
-    border-color: rgba(23, 236, 236, 0.792);
-    
+    border-color: rgba(23, 236, 236, 0.792);  
+}
 
-
-
+.emobut{
+  background-color: white;
+  border-color: white;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 cyan;
@@ -43,4 +44,24 @@ input{
 
 .container {
   padding: 2px 16px;
+}
+.progres {
+  width: 0%;
+  height: 30px;
+  background-color: #2c8e86;
+  text-align: center;
+  line-height: 30px; /* Aliniar text verticalment */
+  color: rgb(187, 112, 112);
+  border-radius: 15px;
+}
+
+.contenidor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 15px; /* Arrodonir les cantonades del contenidor */
+  overflow: hidden;
+ 
 }

@@ -26,7 +26,7 @@ function nova() {
             error.classname = "error";
             error.innerHTML = "el nom del post es obligatori";
             error.style.color = "red";
-            ti.style.borderColor = "red";
+            ti.classList.add("txterror");
             po.appendChild(error)
         }
 
@@ -36,13 +36,14 @@ function nova() {
 
         titol.innerHTML = tit;
         pri.innerHTML = "";
+        emo.innerHTML="";
         en.appendChild(titol);
         generaopcio();
         generaopcio();
         en.appendChild(divgen);
         divgen.appendChild(div);
         let btn = document.createElement("button");
-        btn.textContent = "+";// mirar com s'ha de fer rodo tarda.
+        btn.textContent = "+";
         btn.onclick = function () {
 
             generaopcio();
@@ -74,13 +75,18 @@ function enva() {
 
     let inputs = document.querySelectorAll('#enquesta input');
     inputs.forEach(function (input) {
-        console.log(input.name + ':', input.value);
-
+     
 
         if (input.value.trim().length === 0) {
             blanc = true;
 
+            input.classList.add("txterror");
+
+        } else{
+            input.classList.remove("txterror");
         }
+
+        
         opcions.push(input.value);
     });
     if (blanc) {
@@ -129,14 +135,23 @@ function esta(tri) {
     for (let index = 0; index < opcions.length; index++) {
         const o = opcions[index];
         let p = document.createElement("p");
+        let conp=document.createElement("div");
+        conp.classList.add("contenidor");
+
+
+        let progres= document.createElement("div");
+        progres.classList.add("progres");
         if (index == tri) {
-            p.innerHTML = o + ": 100%";
+            p.innerHTML = o + ": 100%"; 
+            progres.style.width= "100%";
 
         } else {
             p.innerHTML = o + ": 0%";
-
+            progres.style.width= "2%";
         }
+       //conp.appendChild(progres);
         en.appendChild(p);
+        en.appendChild(progres);
 
     }
     let salt = document.createElement("br");
@@ -159,6 +174,7 @@ function generaopcio() {
         teop.id = 'op' + opcio;
         teop.name = 'opcio' + opcio;
         teop.placeholder = 'opcio' + opcio;
+
 
 
         teop.addEventListener("input", () => {
@@ -184,6 +200,7 @@ function generaopcio() {
         div.appendChild(teop);
         div.appendChild(p);
 
+       
 
     }
 
