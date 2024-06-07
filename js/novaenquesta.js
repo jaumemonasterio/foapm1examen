@@ -2,7 +2,7 @@ let en = document.getElementById("enquesta");
 let opcio = 0;
 let salt = document.createElement("br");
 let enques = false;
-let divgen =document.createElement("div");
+let divgen = document.createElement("div");
 let div = document.createElement("div");
 let ti = document.getElementById("titol");
 let tit;
@@ -36,7 +36,7 @@ function nova() {
 
         titol.innerHTML = tit;
         pri.innerHTML = "";
-        emo.innerHTML="";
+        emo.innerHTML = "";
         en.appendChild(titol);
         generaopcio();
         generaopcio();
@@ -61,7 +61,7 @@ function nova() {
         let salt = document.createElement("br");
         en.appendChild(salt);
         en.appendChild(post);
-        
+
     }
 }
 
@@ -75,18 +75,18 @@ function enva() {
 
     let inputs = document.querySelectorAll('#enquesta input');
     inputs.forEach(function (input) {
-     
+
 
         if (input.value.trim().length === 0) {
             blanc = true;
 
             input.classList.add("txterror");
 
-        } else{
+        } else {
             input.classList.remove("txterror");
         }
 
-        
+
         opcions.push(input.value);
     });
     if (blanc) {
@@ -135,21 +135,20 @@ function esta(tri) {
     for (let index = 0; index < opcions.length; index++) {
         const o = opcions[index];
         let p = document.createElement("p");
-        let conp=document.createElement("div");
-        conp.classList.add("contenidor");
 
 
-        let progres= document.createElement("div");
+
+        let progres = document.createElement("div");
         progres.classList.add("progres");
         if (index == tri) {
-            p.innerHTML = o + ": 100%"; 
-            progres.style.width= "100%";
+            p.innerHTML = o + ": 100%";
+            progres.style.width = "100%";
 
         } else {
             p.innerHTML = o + ": 0%";
-            progres.style.width= "2%";
+            progres.style.width = "2%";
         }
-       //conp.appendChild(progres);
+
         en.appendChild(p);
         en.appendChild(progres);
 
@@ -200,7 +199,7 @@ function generaopcio() {
         div.appendChild(teop);
         div.appendChild(p);
 
-       
+
 
     }
 

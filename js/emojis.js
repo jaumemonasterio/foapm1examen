@@ -1,5 +1,5 @@
 let emo = document.getElementById("emo");
-let divemo= document.createElement("div");
+let divemo = document.createElement("div");
 //let text=document.getElementById("emoji");
 let btnemo = document.getElementById("btnemo");
 let con;
@@ -7,73 +7,70 @@ let text;
 
 
 let data = {
-    "Emoticons i persones": ["😀", "😁", "😂", "🤣" , "😎" , "🤓", "🤠", "🫤", "🫡"],
-    "Animals i natura": ["🐶", "🐱", "🐭", "🐹" , "🐧", "🐦", "🐦‍⬛", "🦓", "🐝" , "🦄", "🦫"],
+    "Emoticons i persones": ["😀", "😁", "😂", "🤣", "😎", "🤓", "🤠", "🫤", "🫡"],
+    "Animals i natura": ["🐶", "🐱", "🐭", "🐹", "🐧", "🐦", "🐦‍⬛", "🦓", "🐝", "🦄", "🦫"],
     "Menjar i beguda": ["🍏", "🍎", "🍐", "🍊"],
-    "Actvitats" :[ "🥊", "🥋", "🏋️‍♂️", "🏋️","🏋️‍♀️" , "🏊‍♀️", "🏅", "🥇", "🥈", "🥉" ]
+    "Actvitats": ["🥊", "🥋", "🏋️‍♂️", "🏋️", "🏋️‍♀️", "🏊‍♀️", "🏅", "🥇", "🥈", "🥉"]
 };
 
 
 
-btnemo.onclick= function(){
-    creacio(emo  ,ti);
+btnemo.onclick = function () {
+    creacio(emo);
 
 }
 
 
 
 
-function creacio(contenidor,tex){
+function creacio(contenidor) {
 
-    con=contenidor;
+    con = contenidor;
     //text=tex;
-contenidor.innerHTML="";
+    contenidor.innerHTML = "";
     let categorye;
-    let i =0;
+    let i = 0;
     for (const category in data) {
-        if (i===0){
-            categorye=category;
+        if (i === 0) {
+            categorye = category;
             i++;
         }
         const buto = document.createElement('button');
-        buto.textContent= category;
-        buto.onclick= function () {
-            mostrarem(category, tex);
+        buto.textContent = category;
+        buto.onclick = function () {
+            mostrarem(category);
         }
-         contenidor.appendChild(buto);     
-}
-contenidor.appendChild(divemo);
-mostrarem (categorye, tex);
+        contenidor.appendChild(buto);
+    }
+    contenidor.appendChild(divemo);
+    mostrarem(categorye);
 
 }
 
 
- function escriureem (emoji, tex ){
+function escriureem(emoji) {
     ti.value += emoji;
-   
 
- }
-function mostrarem(category,tex ){
 
-   divemo.innerHTML=""; // borrem si hiha emogis
+}
+function mostrarem(category) {
 
-   
-//let conemo= document.createElement("div");
+    divemo.innerHTML = ""; // borrem si hiha emogis
+
     data[category].forEach(emoji => {
-        console.log(emoji);
 
-        let emobu= document.createElement('button');
-        emobu.innerHTML= emoji;
+
+        let emobu = document.createElement('button');
+        emobu.innerHTML = emoji;
         emobu.classList.add('emobut');
         divemo.appendChild(emobu);
-        emobu.onclick= function (){
+        emobu.onclick = function () {
 
             escriureem(emoji);
         }
-    
+
 
     });
-con.appendChild(conemo);
-   
+    
 }
 
