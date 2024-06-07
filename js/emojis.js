@@ -1,9 +1,6 @@
 let emo = document.getElementById("emo");
 let divemo = document.createElement("div");
-//let text=document.getElementById("emoji");
 let btnemo = document.getElementById("btnemo");
-let con;
-let text;
 
 
 let data = {
@@ -25,8 +22,9 @@ btnemo.onclick = function () {
 
 function creacio(contenidor) {
 
-    con = contenidor;
-    //text=tex;
+    
+    
+    
     contenidor.innerHTML = "";
     let categorye;
     let i = 0;
@@ -58,17 +56,15 @@ function mostrarem(category) {
     divemo.innerHTML = ""; // borrem si hiha emogis
 
     data[category].forEach(emoji => {
-
-
         let emobu = document.createElement('button');
         emobu.innerHTML = emoji;
         emobu.classList.add('emobut');
-        divemo.appendChild(emobu);
+       
         emobu.onclick = function () {
 
             escriureem(emoji);
         }
-
+        divemo.appendChild(emobu);
 
     });
     
